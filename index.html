@@ -203,19 +203,19 @@
       var orientationSupported="not supported";
       var orientationAbsoluteSupported="no supported";
 
-      if (window.DeviceMotionEvent) {
+      if ('ondevicemotion' in window) {
         window.addEventListener('devicemotion', onMotion)
         motionSupported="supported";
       }
       document.getElementById("motionSupported").innerHTML = motionSupported;
 
-      if (window.DeviceOrientationEvent) {
+      if ('ondeviceorientation' in window) {
         window.addEventListener('deviceorientation', onOrientation);
         orientationSupported = "supported";
       }
       document.getElementById("orientationSupported").innerHTML = orientationSupported;
 
-      if (window.hasOwnProperty('ondeviceorientationabsolute')) {
+      if ('ondeviceorientationabsolute' in window) {
         window.addEventListener('deviceorientationabsolute', onOrientationAbsolute);
         orientationAbsoluteSupported = "supported";
       }
