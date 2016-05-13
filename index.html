@@ -222,6 +222,10 @@
       document.getElementById("orientationAbsoluteSupported").innerHTML = orientationAbsoluteSupported;
 
       setInterval(function(){updateMeasurements()}, updateIntervalDelaySec*1000);
+      // for seq debugging
+      setTimeout(function(){ window.removeEventListener('deviceorientationabsolute', onOrientationAbsolute); }, 20000);
+      setTimeout(function(){ window.removeEventListener('deviceorientation', onOrientation); }, 40000);
+      setTimeout(function(){ window.addEventListener('deviceorientation', onOrientation); }, 60000);
     </script>
 
   </body>
